@@ -1,5 +1,6 @@
 import {Deck} from '@deck.gl/core';
 import {GeoJsonLayer} from '@deck.gl/layers';
+import mapboxgl from 'mapbox-gl';
 import Map from './mapbox';
 
 // source: Natural Earth http://www.naturalearthdata.com/ via geojson.xyz
@@ -17,6 +18,7 @@ const INITIAL_VIEW_STATE = {
 };
 
 const map = new Map({
+  mapboxgl,
   mapboxApiAccessToken: MAPBOX_TOKEN,
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v9',

@@ -1,13 +1,16 @@
 /**
  * A simple mapbox-gl wrapper that works with deck props
+ * App is responsible for importing mapboxgl and passing it in as a prop:
+ *   import mapboxgl from 'mapbox-gl';
+ *   const map = new MapboxMap({mapboxgl, ... });
  */
 export default class MapboxMap {
   constructor(props) {
-    const {mapboxApiAccessToken, viewState} = props;
+    const {mapboxgl, mapboxApiAccessToken, viewState} = props;
 
-    props.mapboxgl.accessToken = mapboxApiAccessToken;
+    mapboxgl.accessToken = mapboxApiAccessToken || process.env.MapboxAccessToken; // eslint-disable-line
 
-    this._map = new props.mapboxgl.Map({
+    this._map = new mapboxgl.Map({
       ...props,
       interactive: false,
       center: [viewState.longitude, viewState.latitude],

@@ -21,11 +21,11 @@
 export default `\
 #define SHADER_NAME solid-polygon-layer-vertex-shader
 
-attribute vec2 vertexPositions;
 attribute vec3 positions;
 attribute vec2 positions64xyLow;
 attribute vec3 nextPositions;
 attribute vec2 nextPositions64xyLow;
+attribute vec2 vertexPositions;
 attribute float elevations;
 attribute vec4 colors;
 attribute vec3 pickingColors;

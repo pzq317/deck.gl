@@ -49,7 +49,7 @@ const defaultProps = {
   colorDomain: null,
   colorRange: defaultColorRange,
 
-  getPosition: d => d.position,
+  getPosition: d => d,
   getWeight: d => 1,
 
   gpuAggregation: true
